@@ -16,7 +16,7 @@
 Run Command
 
 ```
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/KingTide/kt-utilities/HEAD/aws/ubuntu-ec2-setup.sh)"
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/KingTide/kt-utilities/HEAD/aws/ubuntu-ec2-dependancies.sh)"
 ```
 
 ## Smart Contract Deployer

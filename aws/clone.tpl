@@ -1,12 +1,3 @@
-#!/bin/bash/
-echo "Downloading Node.js from Nodesource (Version 16.12 LTS)"
-sleep 2
-curl -fsSL https://deb.nodesource.com/setup_16.x | sudo -E bash -
-sudo apt-get install -y nodejs
-sleep 2
-
-echo "-----------------1--------------------"
-
 echo "
     Downloading the code repository
     
@@ -58,7 +49,9 @@ pwd
 sleep 2
 echo "Done!"
 
-echo "-----------------2--------------------"
+
+
+
 
 echo " Downloading PM2 via NPM Global"
 sleep 2
@@ -66,18 +59,7 @@ sudo npm install pm2 -g
 pm2 --version
 sleep 1
 
-echo "-----------------3--------------------"
 
-echo "Downloading Nginx"
-sleep 2
-sudo apt-get install nginx
-nginx -v
-sleep 2
-
-echo "Installing certbot"
-sleep 2
-sudo apt-get install python3-certbot-nginx
-sleep 4
 
 echo "
     Installation finished! There are still some things you'll do manually:
@@ -90,3 +72,7 @@ echo "
     - 6. Restart Nginx using: sudo service nginx restart
     - 7. Run PM2 to start or restart your application
 "
+
+
+
+
