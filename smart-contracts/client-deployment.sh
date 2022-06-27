@@ -37,16 +37,16 @@ nvm install v16.12.0
 echo '--------------------------------3------------------------------------'
 
 echo "Paste in your URL Github repository (Remove the .git extension of your repo url)"
-read gitRepo
+read -p "Paste in your URL Github repository (Remove the .git extension of your repo url): " GITHUB_REPO
 
 echo 'Cloning Repo'
-cd -- && git clone ${gitRepo}
+cd -- && git clone ${GITHUB_REPO}
 
 sleep 2
 
 echo '--------------------------------4------------------------------------'
 echo "Your repo code is located at:" 
-cd ${gitRepo##*/} && pwd
+cd ${GITHUB_REPO##*/} && pwd
 sleep 3
 
 echo 'Installing dependencies for project'

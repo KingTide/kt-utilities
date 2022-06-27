@@ -16,12 +16,9 @@ ssh-keygen -t rsa -f ~/.ssh/ec2-key -N ""
 PUBLIC_KEY=$(cat ~/.ssh/ec2-key.pub)
 
 echo "-----------------2--------------------"
-echo "Enter Name of Github User Who Owns Repository"
-read GITHUB_USER
-echo "Enter Name of Github Repository"
-read GITHUB_REPO
-echo "Enter Github Personal Access Token"
-read GITHUB_TOKEN
+read -p "Enter Name of Github User Who Owns Repository: " GITHUB_USER
+read -p "Enter Name of Github Repository: " GITHUB_REPO
+read -p "Enter Github Personal Access Token: " GITHUB_TOKEN
 
 echo "Adding Key"
 curl -X POST -H "Accept: application/vnd.github.v3+json" -H "Authorization: token $GITHUB_TOKEN" https://api.github.com/repos/$GITHUB_USER/$GITHUB_REPO/keys -d `{"title":"ec2-key","key":$PUBLIC_KEY,"read_only":true}`
